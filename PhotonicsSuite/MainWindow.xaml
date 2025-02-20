@@ -1,0 +1,59 @@
+﻿<Window x:Class="PhotonicsSuite.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhotonicsSuite"
+        xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
+        xmlns:controls="clr-namespace:PhotonicsSuite.Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TabControl Grid.Row="0" Grid.ColumnSpan="1">
+            <TabItem Header="Camera">
+                <StackPanel Margin="10">
+                    <!-- Add your controls here -->
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Data">
+                <s:SciChartSurface x:Name="sciChartSurface">
+                    <s:SciChartSurface.XAxis>
+                        <s:NumericAxis AxisTitle="Number of Samples (per Series)"/>
+                    </s:SciChartSurface.XAxis>
+                    <s:SciChartSurface.YAxis>
+                        <s:NumericAxis AxisTitle="Value"/>
+                    </s:SciChartSurface.YAxis>
+                    <s:SciChartSurface.ChartModifier>
+                        <s:ModifierGroup>
+                            <s:RubberBandXyZoomModifier />
+                            <s:ZoomExtentsModifier />
+                        </s:ModifierGroup>
+                    </s:SciChartSurface.ChartModifier>
+                    <s:SciChartSurface.Annotations>
+                        <s:TextAnnotation Text="Hello world!" X1="5.0" Y1="5.0"/>
+                    </s:SciChartSurface.Annotations>
+                </s:SciChartSurface>
+            </TabItem>
+        </TabControl>
+
+        <!-- Placeholder for additional content in the second row -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
+            <!-- Add your controls here -->
+        </StackPanel>
+        <StackPanel Grid.Row="0" Name="ControlsPanel" Grid.RowSpan="2" Grid.Column="1" Margin="10">
+            <!-- Add your controls here -->
+            <Label Content="Controls" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Black" 
+                   HorizontalAlignment="Center"></Label>
+            <ToggleButton Width="30" Height="30" Content="LaserOn"></ToggleButton>
+        </StackPanel>
+    </Grid>
+</Window>

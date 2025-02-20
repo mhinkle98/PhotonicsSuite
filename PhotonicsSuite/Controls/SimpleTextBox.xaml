@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="PhotonicsSuite.Controls.SimpleTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:PhotonicsSuite.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <Border x:Name="border"
+                                    Background="LightGray"
+                                    CornerRadius="6"
+                                    BorderBrush="Black"
+                                    BorderThickness="3"
+                                    Padding="5 0 5 0">
+                                <ScrollViewer x:Name="PART_ContentHost" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="SkyBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <TextBox Text="Test" x:Name="TextBoxElement" Height="28" TextAlignment="Center" VerticalContentAlignment="Center" MinWidth="60"
+                FontSize="13" Margin="10" FontWeight="Bold" FontFamily="Comic Sans MS" Foreground="Black"
+                VerticalAlignment="Center" Cursor="IBeam" Width="Auto"/>
+    </Grid>
+</UserControl>
