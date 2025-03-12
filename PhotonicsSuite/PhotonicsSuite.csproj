@@ -2,12 +2,22 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net5.0-windows</TargetFramework>
+        <TargetFramework>net8.0-windows</TargetFramework>
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="IviFoundation.Visa" Version="8.0.0-preview.7414" />
       <PackageReference Include="SciChart" Version="8.6.0.28199" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="NationalInstruments.Common">
+        <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\NationalInstruments.Common\v4.0_19.1.40.49152__dc6ad606294fc298\NationalInstruments.Common.dll</HintPath>
+      </Reference>
+      <Reference Include="NationalInstruments.Visa">
+        <HintPath>..\..\..\..\..\..\Program Files (x86)\IVI Foundation\VISA\Microsoft.NET\Framework32\v4.0.30319\NI VISA.NET 25.0\NationalInstruments.Visa.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>
